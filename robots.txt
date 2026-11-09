@@ -4,4 +4,4 @@ Disallow: /source-photos/
 Disallow: /tools/
 Disallow: /admin/
 
-Sitemap: https://brewmastersacademy.co.ke/sitemap.xml
+Sitemap: https://www.brewmastersacademy.co.ke/sitemap.xml

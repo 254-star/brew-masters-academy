@@ -28,7 +28,7 @@ Until a key is set, the form checks the fields but sends nothing, and says so.
 ## Deploy from GitHub to Vercel and connect the domain
 1. Create a GitHub repository for the website. `.gitignore` keeps the private source photos, editor, build tools, and local files out of the repository.
 2. Push the website files to the repository, then in Vercel choose **Add New → Project**, import that GitHub repository, and deploy it. Vercel will redeploy when changes are pushed to the connected branch.
-3. In the Vercel project, open **Settings → Domains** and add `brewmastersacademy.co.ke` (and optionally `www.brewmastersacademy.co.ke`). Set `brewmastersacademy.co.ke` as primary; the canonical URL and sitemap use this version.
+3. In the Vercel project, open **Settings → Domains** and add `brewmastersacademy.co.ke` (and optionally `www.brewmastersacademy.co.ke`). Set `www.brewmastersacademy.co.ke` as primary; the canonical URL and sitemap use this version.
 4. In the Hosting.com control panel, open DNS management for `brewmastersacademy.co.ke` and add or update the records Vercel shows for each domain. Use the exact values shown in your project; do not remove mail-related DNS records.
 5. Wait for Vercel to verify the DNS records and issue the HTTPS certificate. Then test both the domain and `www` if configured.
 
@@ -42,7 +42,7 @@ The about story, and student quotes (only with permission). Look for `EDITABLE` 
 - Never put passwords or private keys in these files.
 
 ## Sitemap and search engines
-`sitemap.xml`, `robots.txt`, and the page's canonical URL are set to `https://brewmastersacademy.co.ke/`. Once the domain is live, verify it in Google Search Console and submit `https://brewmastersacademy.co.ke/sitemap.xml`. The site is one page with sections (Home, Programs, About, Consulting, Gallery, Community, Contact, Find Us), so the sitemap lists the one page.
+`sitemap.xml`, `robots.txt`, and the page's canonical URL are set to `https://www.brewmastersacademy.co.ke/`. Once the domain is live, verify it in Google Search Console and submit `https://www.brewmastersacademy.co.ke/sitemap.xml`. The site is one page with sections (Home, Programs, About, Consulting, Gallery, Community, Contact, Find Us), so the sitemap lists the one page.
 
 ## Editing the site yourself (admin/index.html)
 Open `admin/index.html` in your browser (double-click it; if the file does not load on its own, click "Open site.json" and pick `content/site.json`). You can change courses (name, description, duration, fee, button, photo, order), the headline, About and Consulting text, and add, remove, re-order or describe gallery photos. Click "Download updated site", unzip, copy the `content` and `images` folders into this project, and upload the project again.
