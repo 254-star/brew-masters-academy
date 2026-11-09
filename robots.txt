@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /source-photos/
+Disallow: /tools/
+Disallow: /admin/
+
+Sitemap: https://brewmastersacademy.co.ke/sitemap.xml

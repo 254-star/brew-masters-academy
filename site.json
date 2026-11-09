@@ -1,0 +1,172 @@
+{
+  "hero": {
+    "headline": "Barista Training and Coffee Courses in Nairobi",
+    "lead": "Hands-on barista courses for beginners and aspiring professionals, plus customer service training and café consulting."
+  },
+  "programs": {
+    "heading": "Learn. Practice. Master.",
+    "intro": "Two barista courses built around hands-on practice, plus training in guest experience and customer service. Choose what fits your goals, then enroll or ask us a question.",
+    "courses": [
+      {
+        "title": "Professional Barista Course",
+        "desc": "Our full barista program for people who want to work or build a career in coffee.",
+        "duration": "6 weeks",
+        "fee": "KSh 35,000",
+        "photo": "students-at-steel-bench",
+        "pos": "50% 25%",
+        "button": "Enroll"
+      },
+      {
+        "title": "Basic Barista Course",
+        "desc": "A shorter introduction to coffee and barista skills, ideal for beginners.",
+        "duration": "3 weeks",
+        "fee": "KSh 20,000",
+        "photo": "student-pouring-with-classmate",
+        "pos": "50% 25%",
+        "button": "Enroll"
+      },
+      {
+        "title": "Guest Experience & Customer Service",
+        "desc": "Training in welcoming guests and serving customers well. Contact us for duration and fees.",
+        "duration": "",
+        "fee": "",
+        "photo": "baristas-wyre-and-erick",
+        "pos": "50% 20%",
+        "button": "Enquire"
+      }
+    ]
+  },
+  "about": {
+    "heading": "More Than a School, It’s a Community",
+    "paragraphs": [
+      "Brew Masters Coffee Academy is a coffee education and consulting business built around three ideas: train people in the craft of coffee, consult for coffee businesses, and connect everyone who loves coffee.",
+      "Whether you are pouring your first espresso or shaping a café menu, you learn by doing, with practical skills you can use the next day."
+    ]
+  },
+  "consulting": {
+    "heading": "Support for Coffee Businesses",
+    "intro": "Practical guidance for coffee shops, cafés and coffee entrepreneurs, from the first idea to the daily running of the bar.",
+    "services": [
+      {
+        "title": "Café and menu guidance",
+        "desc": "Shape a coffee offer that suits your customers."
+      },
+      {
+        "title": "Equipment and workflow",
+        "desc": "Set up your bar so service is smooth and consistent."
+      },
+      {
+        "title": "Team training",
+        "desc": "Build barista skills inside your own business."
+      },
+      {
+        "title": "Starting a coffee business",
+        "desc": "Advice for entrepreneurs entering the industry."
+      }
+    ]
+  },
+  "gallery": [
+    {
+      "slug": "green-apron-gooseneck-pour",
+      "alt": "A student in a green Brew Masters apron pouring hot water from a gooseneck kettle into a V60 dripper",
+      "w": 720,
+      "h": 960
+    },
+    {
+      "slug": "students-pour-over-pair",
+      "alt": "Two students in green and denim Brew Masters aprons making pour-over coffee at a steel bench",
+      "w": 720,
+      "h": 960
+    },
+    {
+      "slug": "swan-latte-art-pair",
+      "alt": "Two green cups of latte with swan-style latte art on a steel counter",
+      "w": 720,
+      "h": 960
+    },
+    {
+      "slug": "baristas-wyre-and-erick",
+      "alt": "Two smiling baristas in tan Brew Masters aprons embroidered Barista Wyre and Barista Erick",
+      "w": 720,
+      "h": 960
+    },
+    {
+      "slug": "students-setting-v60-filter",
+      "alt": "Two students in green aprons setting a paper filter into a V60 dripper",
+      "w": 720,
+      "h": 960
+    },
+    {
+      "slug": "green-cup-heart-latte",
+      "alt": "A latte with heart latte art in a green cup and saucer with a spoon",
+      "w": 720,
+      "h": 960
+    },
+    {
+      "slug": "student-pouring-with-classmate",
+      "alt": "A student in a grey hoodie pouring from a gooseneck kettle while a classmate in a green Brew Masters apron looks on",
+      "w": 720,
+      "h": 960
+    },
+    {
+      "slug": "banner-pair-chatting",
+      "alt": "A woman and a man in a denim Brew Masters apron chatting in front of the academy banner",
+      "w": 720,
+      "h": 1080
+    },
+    {
+      "slug": "cappuccino-web-art",
+      "alt": "A cappuccino with a chocolate web pattern in a green cup, with a latte glass behind it",
+      "w": 720,
+      "h": 960
+    },
+    {
+      "slug": "students-at-steel-bench",
+      "alt": "Two students in Brew Masters aprons at a steel bench, one pouring a V60 while the other watches",
+      "w": 720,
+      "h": 960
+    },
+    {
+      "slug": "student-pouring-closeup",
+      "alt": "A student in a blue apron pouring water from a gooseneck kettle over a V60 dripper",
+      "w": 720,
+      "h": 960
+    },
+    {
+      "slug": "banner-cup-in-hand",
+      "alt": "A hand holding a coffee cup in front of the Brew Masters Coffee Academy banner",
+      "w": 720,
+      "h": 480
+    },
+    {
+      "slug": "student-watching-pour-over",
+      "alt": "A student in a denim Brew Masters apron watching coffee drip through a V60 dripper on a scale",
+      "w": 720,
+      "h": 960
+    },
+    {
+      "slug": "expo-stand-machine-clean",
+      "alt": "A man wiping down an espresso machine beside the Brew Masters banner at an exhibition stand",
+      "w": 720,
+      "h": 1080
+    },
+    {
+      "slug": "terrace-barista-portrait",
+      "alt": "Two men on an outdoor terrace, one in a tan Brew Masters barista apron holding a coffee cup",
+      "w": 720,
+      "h": 1080
+    },
+    {
+      "slug": "banner-register-now-pair",
+      "alt": "Two people in black gloves standing in front of the Brew Masters Coffee Academy register now banner",
+      "w": 720,
+      "h": 1080
+    },
+    {
+      "slug": "banner-woman-white-shirt",
+      "alt": "A woman in a white shirt and hairnet standing in front of the academy banner",
+      "w": 720,
+      "h": 1080
+    }
+  ]
+}
