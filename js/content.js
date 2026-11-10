@@ -46,6 +46,11 @@ function render(c){
         sel.textContent='';
         var o=document.createElement('option');o.value='';o.textContent='Select an option';sel.appendChild(o);
         p.courses.map(function(k){return k.title}).concat(['Consulting','Something else']).forEach(function(t){var x=document.createElement('option');x.textContent=t;sel.appendChild(x)});
+        var requested=new URLSearchParams(window.location.search).get('program');
+        if(requested)Array.prototype.some.call(sel.options,function(option){
+          if(option.value===requested||option.textContent===requested){sel.value=option.value;return true}
+          return false;
+        });
       }
     }
   }

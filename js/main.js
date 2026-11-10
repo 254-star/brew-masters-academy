@@ -11,6 +11,11 @@ var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelect
 /* year */
 var yr=$('#yr'); if(yr) yr.textContent=new Date().getFullYear();
 
+var program=$('#program'), requestedProgram=new URLSearchParams(window.location.search).get('program');
+if(program&&requestedProgram&&Array.prototype.some.call(program.options,function(option){return option.value===requestedProgram||option.textContent===requestedProgram})){
+  program.value=requestedProgram;
+}
+
 /* mobile menu */
 var menuBtn=$('#menuBtn'), nav=$('#nav');
 function setMenu(open){

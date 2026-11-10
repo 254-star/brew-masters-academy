@@ -42,7 +42,7 @@ The about story, and student quotes (only with permission). Look for `EDITABLE` 
 - Never put passwords or private keys in these files.
 
 ## Sitemap and search engines
-`sitemap.xml`, `robots.txt`, and the page's canonical URL are set to `https://www.brewmastersacademy.co.ke/`. Once the domain is live, verify it in Google Search Console and submit `https://www.brewmastersacademy.co.ke/sitemap.xml`. The site is one page with sections (Home, Programs, About, Consulting, Gallery, Community, Contact, Find Us), so the sitemap lists the one page.
+`robots.txt` and canonical URLs use `https://www.brewmastersacademy.co.ke/`. The sitemap includes the homepage and the dedicated `/barista-courses/` and `/cafe-consulting/` pages. Submit `https://www.brewmastersacademy.co.ke/sitemap.xml` in Google Search Console. Sitemap submission helps Google discover URLs but does not guarantee indexing or search visibility.
 
 ## Editing the site yourself (admin/index.html)
 Open `admin/index.html` in your browser (double-click it; if the file does not load on its own, click "Open site.json" and pick `content/site.json`). You can change courses (name, description, duration, fee, button, photo, order), the headline, About and Consulting text, and add, remove, re-order or describe gallery photos. Click "Download updated site", unzip, copy the `content` and `images` folders into this project, and upload the project again.
