@@ -3,6 +3,5 @@
 .env.*
 .venv/
 .vercel/
-admin/
 source-photos/
 tools/

@@ -8,29 +8,32 @@
     "intro": "Choose a beginner or professional barista course in Nairobi. Train hands-on in coffee preparation and barista skills, or ask about guest experience and customer service training. Intakes are ongoing; contact us for the next available start date.",
     "courses": [
       {
+        "id": "professional-barista-course",
         "title": "Professional Barista Course",
         "desc": "Our full barista program for people who want to work or build a career in coffee.",
         "duration": "6 weeks",
         "fee": "KSh 35,000",
-        "photo": "students-at-steel-bench",
+        "photo": "/images/client-gallery/thumbs/students-at-steel-bench.webp",
         "pos": "50% 25%",
         "button": "Enroll"
       },
       {
+        "id": "basic-barista-course",
         "title": "Basic Barista Course",
         "desc": "A shorter introduction to coffee and barista skills, ideal for beginners.",
         "duration": "3 weeks",
         "fee": "KSh 20,000",
-        "photo": "student-pouring-with-classmate",
+        "photo": "/images/client-gallery/thumbs/student-pouring-with-classmate.webp",
         "pos": "50% 25%",
         "button": "Enroll"
       },
       {
+        "id": "guest-experience-course",
         "title": "Guest Experience & Customer Service",
         "desc": "Training in welcoming guests and serving customers well. Contact us for duration and fees.",
         "duration": "",
         "fee": "",
-        "photo": "baristas-wyre-and-erick",
+        "photo": "/images/client-gallery/thumbs/baristas-wyre-and-erick.webp",
         "pos": "50% 20%",
         "button": "Enquire"
       }
@@ -38,6 +41,8 @@
   },
   "about": {
     "heading": "More Than a School, It’s a Community",
+    "image": "/images/client-gallery/large/baristas-wyre-and-erick.webp",
+    "image_alt": "Two smiling baristas in tan Brew Masters aprons embroidered Barista Wyre and Barista Erick",
     "paragraphs": [
       "Brew Masters Coffee Academy is a coffee education and consulting business built around three ideas: train people in the craft of coffee, consult for coffee businesses, and connect everyone who loves coffee.",
       "Whether you are pouring your first espresso or shaping a café menu, you learn by doing, with practical skills you can use the next day."
@@ -46,6 +51,8 @@
   "consulting": {
     "heading": "Support for Coffee Businesses",
     "intro": "Practical guidance for coffee shops, cafés and coffee entrepreneurs, from the first idea to the daily running of the bar.",
+    "image": "/images/client-gallery/large/expo-stand-machine-clean.webp",
+    "image_alt": "A man wiping down an espresso machine beside the Brew Masters banner at an exhibition stand",
     "services": [
       {
         "title": "Café and menu guidance",
@@ -67,103 +74,120 @@
   },
   "gallery": [
     {
-      "slug": "green-apron-gooseneck-pour",
+      "image": "/images/client-gallery/large/green-apron-gooseneck-pour.webp",
+      "thumbnail": "/images/client-gallery/thumbs/green-apron-gooseneck-pour.webp",
       "alt": "A student in a green Brew Masters apron pouring hot water from a gooseneck kettle into a V60 dripper",
       "w": 720,
       "h": 960
     },
     {
-      "slug": "students-pour-over-pair",
+      "image": "/images/client-gallery/large/students-pour-over-pair.webp",
+      "thumbnail": "/images/client-gallery/thumbs/students-pour-over-pair.webp",
       "alt": "Two students in green and denim Brew Masters aprons making pour-over coffee at a steel bench",
       "w": 720,
       "h": 960
     },
     {
-      "slug": "swan-latte-art-pair",
+      "image": "/images/client-gallery/large/swan-latte-art-pair.webp",
+      "thumbnail": "/images/client-gallery/thumbs/swan-latte-art-pair.webp",
       "alt": "Two green cups of latte with swan-style latte art on a steel counter",
       "w": 720,
       "h": 960
     },
     {
-      "slug": "baristas-wyre-and-erick",
+      "image": "/images/client-gallery/large/baristas-wyre-and-erick.webp",
+      "thumbnail": "/images/client-gallery/thumbs/baristas-wyre-and-erick.webp",
       "alt": "Two smiling baristas in tan Brew Masters aprons embroidered Barista Wyre and Barista Erick",
       "w": 720,
       "h": 960
     },
     {
-      "slug": "students-setting-v60-filter",
+      "image": "/images/client-gallery/large/students-setting-v60-filter.webp",
+      "thumbnail": "/images/client-gallery/thumbs/students-setting-v60-filter.webp",
       "alt": "Two students in green aprons setting a paper filter into a V60 dripper",
       "w": 720,
       "h": 960
     },
     {
-      "slug": "green-cup-heart-latte",
+      "image": "/images/client-gallery/large/green-cup-heart-latte.webp",
+      "thumbnail": "/images/client-gallery/thumbs/green-cup-heart-latte.webp",
       "alt": "A latte with heart latte art in a green cup and saucer with a spoon",
       "w": 720,
       "h": 960
     },
     {
-      "slug": "student-pouring-with-classmate",
+      "image": "/images/client-gallery/large/student-pouring-with-classmate.webp",
+      "thumbnail": "/images/client-gallery/thumbs/student-pouring-with-classmate.webp",
       "alt": "A student in a grey hoodie pouring from a gooseneck kettle while a classmate in a green Brew Masters apron looks on",
       "w": 720,
       "h": 960
     },
     {
-      "slug": "banner-pair-chatting",
+      "image": "/images/client-gallery/large/banner-pair-chatting.webp",
+      "thumbnail": "/images/client-gallery/thumbs/banner-pair-chatting.webp",
       "alt": "A woman and a man in a denim Brew Masters apron chatting in front of the academy banner",
       "w": 720,
       "h": 1080
     },
     {
-      "slug": "cappuccino-web-art",
+      "image": "/images/client-gallery/large/cappuccino-web-art.webp",
+      "thumbnail": "/images/client-gallery/thumbs/cappuccino-web-art.webp",
       "alt": "A cappuccino with a chocolate web pattern in a green cup, with a latte glass behind it",
       "w": 720,
       "h": 960
     },
     {
-      "slug": "students-at-steel-bench",
+      "image": "/images/client-gallery/large/students-at-steel-bench.webp",
+      "thumbnail": "/images/client-gallery/thumbs/students-at-steel-bench.webp",
       "alt": "Two students in Brew Masters aprons at a steel bench, one pouring a V60 while the other watches",
       "w": 720,
       "h": 960
     },
     {
-      "slug": "student-pouring-closeup",
+      "image": "/images/client-gallery/large/student-pouring-closeup.webp",
+      "thumbnail": "/images/client-gallery/thumbs/student-pouring-closeup.webp",
       "alt": "A student in a blue apron pouring water from a gooseneck kettle over a V60 dripper",
       "w": 720,
       "h": 960
     },
     {
-      "slug": "banner-cup-in-hand",
+      "image": "/images/client-gallery/large/banner-cup-in-hand.webp",
+      "thumbnail": "/images/client-gallery/thumbs/banner-cup-in-hand.webp",
       "alt": "A hand holding a coffee cup in front of the Brew Masters Coffee Academy banner",
       "w": 720,
       "h": 480
     },
     {
-      "slug": "student-watching-pour-over",
+      "image": "/images/client-gallery/large/student-watching-pour-over.webp",
+      "thumbnail": "/images/client-gallery/thumbs/student-watching-pour-over.webp",
       "alt": "A student in a denim Brew Masters apron watching coffee drip through a V60 dripper on a scale",
       "w": 720,
       "h": 960
     },
     {
-      "slug": "expo-stand-machine-clean",
+      "image": "/images/client-gallery/large/expo-stand-machine-clean.webp",
+      "thumbnail": "/images/client-gallery/thumbs/expo-stand-machine-clean.webp",
       "alt": "A man wiping down an espresso machine beside the Brew Masters banner at an exhibition stand",
       "w": 720,
       "h": 1080
     },
     {
-      "slug": "terrace-barista-portrait",
+      "image": "/images/client-gallery/large/terrace-barista-portrait.webp",
+      "thumbnail": "/images/client-gallery/thumbs/terrace-barista-portrait.webp",
       "alt": "Two men on an outdoor terrace, one in a tan Brew Masters barista apron holding a coffee cup",
       "w": 720,
       "h": 1080
     },
     {
-      "slug": "banner-register-now-pair",
+      "image": "/images/client-gallery/large/banner-register-now-pair.webp",
+      "thumbnail": "/images/client-gallery/thumbs/banner-register-now-pair.webp",
       "alt": "Two people in black gloves standing in front of the Brew Masters Coffee Academy register now banner",
       "w": 720,
       "h": 1080
     },
     {
-      "slug": "banner-woman-white-shirt",
+      "image": "/images/client-gallery/large/banner-woman-white-shirt.webp",
+      "thumbnail": "/images/client-gallery/thumbs/banner-woman-white-shirt.webp",
       "alt": "A woman in a white shirt and hairnet standing in front of the academy banner",
       "w": 720,
       "h": 1080

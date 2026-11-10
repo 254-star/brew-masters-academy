@@ -1,0 +1,82 @@
+backend:
+  name: github
+  repo: 254-star/brew-masters-academy
+  branch: main
+  base_url: https://www.brewmastersacademy.co.ke
+  site_domain: www.brewmastersacademy.co.ke
+  auth_scope: public_repo
+
+media_folder: images/cms-gallery
+public_folder: /images/cms-gallery
+
+collections:
+  - name: site
+    label: Website content
+    files:
+      - name: site
+        label: Homepage, courses and gallery
+        file: content/site.json
+        fields:
+          - name: hero
+            label: Homepage hero
+            widget: object
+            fields:
+              - { name: headline, label: Main headline, widget: string }
+              - { name: lead, label: Intro text, widget: text }
+          - name: programs
+            label: Courses and fees
+            widget: object
+            fields:
+              - { name: heading, label: Section heading, widget: string }
+              - { name: intro, label: Intro text, widget: text }
+              - name: courses
+                label: Courses
+                widget: list
+                min: 1
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: id, label: Course link ID, widget: hidden, required: false }
+                  - { name: title, label: Course name, widget: string }
+                  - { name: desc, label: Description, widget: text }
+                  - { name: duration, label: Duration, widget: string, required: false }
+                  - { name: fee, label: Fee, widget: string, required: false }
+                  - { name: photo, label: Course photo, widget: image, required: false }
+                  - { name: pos, label: Photo focal point, widget: string, required: false, hint: "CSS position such as 50% 25%." }
+                  - { name: button, label: Button text, widget: string }
+          - name: about
+            label: About section
+            widget: object
+            fields:
+              - { name: heading, label: Section heading, widget: string }
+              - { name: image, label: About photo, widget: image, required: false }
+              - { name: image_alt, label: About photo description, widget: string, required: false }
+              - name: paragraphs
+                label: Paragraphs
+                widget: list
+                field: { name: paragraph, label: Paragraph, widget: text }
+          - name: consulting
+            label: Consulting section
+            widget: object
+            fields:
+              - { name: heading, label: Section heading, widget: string }
+              - { name: intro, label: Intro text, widget: text }
+              - { name: image, label: Consulting photo, widget: image, required: false }
+              - { name: image_alt, label: Consulting photo description, widget: string, required: false }
+              - name: services
+                label: Services
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Service, widget: string }
+                  - { name: desc, label: Description, widget: text }
+          - name: gallery
+            label: Gallery photos
+            widget: list
+            min: 1
+            summary: "{{fields.alt}}"
+            fields:
+              - { name: image, label: Full-size image, widget: image }
+              - { name: thumbnail, label: Thumbnail (optional), widget: image, required: false, hint: "Leave blank to use the full-size image as the thumbnail." }
+              - { name: alt, label: Image description for accessibility, widget: string }
+              - { name: w, label: Image width, widget: number, value_type: int, min: 1, default: 720 }
+              - { name: h, label: Image height, widget: number, value_type: int, min: 1, default: 960 }

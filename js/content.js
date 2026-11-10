@@ -1,4 +1,4 @@
-/* Fills the page from content/site.json (edited with admin/index.html).
+/* Fills the page from content/site.json (edited with admin/config.yml).
    If the file cannot be loaded, the text already written in index.html stays in place. */
 (function(){
 'use strict';
@@ -8,10 +8,40 @@ function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=c
 function icon(id){var s=document.createElementNS(SVG,'svg');s.setAttribute('class','ic');s.setAttribute('aria-hidden','true');var u=document.createElementNS(SVG,'use');u.setAttribute('href','#'+id);s.appendChild(u);return s}
 function setText(sel,t){var e=$(sel);if(e&&typeof t==='string'&&t.trim())e.textContent=t}
 function safeSlug(s){return /^[a-z0-9][a-z0-9-]*$/i.test(s||'')?s:''}
+function safeImagePath(s){return /^\/images\/[a-z0-9_./-]+\.(?:webp|png|jpe?g)$/i.test(s||'')&&!s.includes('..')?s:''}
+function courseId(c){return safeSlug(c.id)||safeSlug(c.title)||'course'}
+function courseImage(s){var image=safeImagePath(s),slug=safeSlug(s);return image||(slug?'/images/client-gallery/thumbs/'+slug+'.webp':'')}
+function durationValue(s){var m=/^\s*(\d+)\s*(day|week|month)s?\s*$/i.exec(s||'');return m?'P'+m[1]+({day:'D',week:'W',month:'M'}[m[2].toLowerCase()]):''}
+function priceValue(s){var m=/^\s*(?:KSh\s*)?([\d,]+)(\.\d{1,2})?\s*$/i.exec(s||'');return m?m[1].replace(/,/g,'')+(m[2]||''):''}
+function gallerySources(item){
+  var slug=safeSlug(item.slug),full=safeImagePath(item.image)||(slug?'/images/client-gallery/large/'+slug+'.webp':'');
+  return {full:full,thumb:safeImagePath(item.thumbnail)||full};
+}
+function galleryButton(item,cls){
+  var source=gallerySources(item);if(!source.full)return null;
+  var button=el('button',cls);button.type='button';button.setAttribute('data-full',source.full);button.setAttribute('aria-haspopup','dialog');
+  var image=document.createElement('img');image.src=source.thumb;image.width=item.w||720;image.height=item.h||960;image.alt=item.alt||'';image.loading='lazy';image.decoding='async';
+  button.appendChild(image);return button;
+}
+function updateCourseSchemas(courses){
+  var entries=courses.map(function(c){
+    var entry={'@type':'Course','name':c.title||'','description':c.desc||''};
+    var duration=durationValue(c.duration),price=priceValue(c.fee),id=courseId(c);
+    if(duration)entry.timeRequired=duration;
+    entry.provider={'@id':'https://www.brewmastersacademy.co.ke/#brew-masters-coffee-academy'};
+    entry.url='https://www.brewmastersacademy.co.ke/barista-courses/#'+id;
+    if(price)entry.offers={'@type':'Offer','price':price,'priceCurrency':'KES','url':entry.url};
+    return entry;
+  });
+  var home=$('#homeCourseSchema');
+  if(home){var homeData=JSON.parse(home.textContent);homeData.hasCourse=entries;home.textContent=JSON.stringify(homeData)}
+  var detail=$('#coursePageSchema');
+  if(detail){var detailData=JSON.parse(detail.textContent);detailData['@graph']=entries;detail.textContent=JSON.stringify(detailData)}
+}
 var ICONS=['i-cup','i-cap','i-brief','i-users'];
 
 function render(c){
-  var alt={};(c.gallery||[]).forEach(function(g){alt[g.slug]=g.alt});
+  var alt={};(c.gallery||[]).forEach(function(g){var image=safeImagePath(g.image),thumbnail=safeImagePath(g.thumbnail);if(image)alt[image]=g.alt||'';if(thumbnail)alt[thumbnail]=g.alt||'';var slug=safeSlug(g.slug);if(slug)alt[slug]=g.alt||''});
   if(c.hero){setText('.hero h1',c.hero.headline);setText('.hero .lead',c.hero.lead)}
 
   var p=c.programs;
@@ -21,10 +51,10 @@ function render(c){
     if(wrap&&p.courses&&p.courses.length){
       wrap.textContent='';
       p.courses.forEach(function(k,i){
-        var slug=safeSlug(k.photo);
         var a=el('article','card');
         var ci=el('div','card-img');
-        if(slug){var im=document.createElement('img');im.src='images/client-gallery/thumbs/'+slug+'.webp';im.width=720;im.height=960;im.alt=alt[slug]||k.title||'';im.loading='lazy';im.style.objectPosition=/^\d+% \d+%$/.test(k.pos||'')?k.pos:'50% 25%';ci.appendChild(im)}
+        var image=courseImage(k.photo);
+        if(image){var im=document.createElement('img');im.src=image;im.width=720;im.height=960;im.alt=alt[image]||k.title||'';im.loading='lazy';im.decoding='async';im.style.objectPosition=/^\d+% \d+%$/.test(k.pos||'')?k.pos:'50% 25%';ci.appendChild(im)}
         a.appendChild(ci);
         var b=el('span','ic-badge');b.appendChild(icon(ICONS[i%ICONS.length]));a.appendChild(b);
         var body=el('div','card-body');
@@ -52,12 +82,32 @@ function render(c){
           return false;
         });
       }
+      updateCourseSchemas(p.courses);
     }
+  }
+
+  var detailGrid=$('#courseCardsDetail');
+  if(detailGrid&&p&&p.courses&&p.courses.length){
+    detailGrid.textContent='';
+    p.courses.forEach(function(k){
+      var id=courseId(k),title=k.title||'',query='/?program='+encodeURIComponent(title)+'#contact';
+      var card=el('article','card');card.id=id;
+      var body=el('div','card-body');body.appendChild(el('h2',null,title));body.appendChild(el('p',null,k.desc||''));
+      if(k.duration){var facts=el('ul','facts');facts.appendChild(el('li',null,'Duration: '+k.duration));body.appendChild(facts)}
+      if(k.fee)body.appendChild(el('p','price',k.fee));
+      var link=el('a','btn sm',k.button==='Enroll'?'Enquire about this course':'Ask about this training');link.href=query;body.appendChild(link);
+      card.appendChild(body);detailGrid.appendChild(card);
+    });
+    var first=p.courses[0],primary=$('.detail-hero .detail-actions .btn');
+    if(first&&primary)primary.href='/?program='+encodeURIComponent(first.title||'')+'#contact';
+    updateCourseSchemas(p.courses);
   }
 
   var a=c.about;
   if(a){
     setText('.about-text h2',a.heading);
+    var aboutImage=$('.about-photo img'),aboutSrc=safeImagePath(a.image);
+    if(aboutImage&&aboutSrc){aboutImage.src=aboutSrc;if(typeof a.image_alt==='string')aboutImage.alt=a.image_alt}
     if(a.paragraphs&&a.paragraphs.length){
       var box=$('.about-text'),btn2=$('.btn',box);
       Array.prototype.slice.call(box.querySelectorAll(':scope > p:not(.eyebrow)')).forEach(function(x){x.remove()});
@@ -68,6 +118,8 @@ function render(c){
   var s=c.consulting;
   if(s){
     setText('.consult h2',s.heading);setText('.consult .lead-dark',s.intro);
+    var consultingImage=$('.consult-photo img'),consultingSrc=safeImagePath(s.image);
+    if(consultingImage&&consultingSrc){consultingImage.src=consultingSrc;if(typeof s.image_alt==='string')consultingImage.alt=s.image_alt}
     var ul2=$('.consult .srv');
     if(ul2&&s.services&&s.services.length){
       ul2.textContent='';
@@ -79,19 +131,22 @@ function render(c){
   }
 
   var g=c.gallery,grid=$('#gGrid');
+  var mosaic=$('#galleryMosaic');
+  if(g&&g.length&&mosaic){
+    mosaic.textContent='';
+    g.slice(0,5).forEach(function(it){var button=galleryButton(it,'g-btn');if(button)mosaic.appendChild(button)});
+  }
   if(g&&g.length&&grid){
     grid.textContent='';
     g.forEach(function(it){
-      var slug=safeSlug(it.slug);if(!slug)return;
+      var source=gallerySources(it);if(!source.full)return;
       var li=el('li','g-item');li.dataset.w=it.w||3;li.dataset.h=it.h||4;
-      var b=el('button','g-btn');b.type='button';b.setAttribute('data-full','images/client-gallery/large/'+slug+'.webp');b.setAttribute('aria-haspopup','dialog');
-      var im=document.createElement('img');im.src='images/client-gallery/thumbs/'+slug+'.webp';im.width=it.w||720;im.height=it.h||960;im.alt=it.alt||'';im.loading='lazy';im.decoding='async';
-      b.appendChild(im);li.appendChild(b);grid.appendChild(li);
+      var button=galleryButton(it,'g-btn');li.appendChild(button);grid.appendChild(li);
     });
     window.__bmContent=true;
     document.dispatchEvent(new Event('bm:content'));
   }
 }
 
-fetch('content/site.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(render).catch(function(){});
+fetch('/content/site.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(render).catch(function(){});
 })();

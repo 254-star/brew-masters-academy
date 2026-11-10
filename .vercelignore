@@ -1,7 +1,6 @@
 .env
 .env.*
 .venv/
-admin/
 source-photos/
 tools/
 README.md
