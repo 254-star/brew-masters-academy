@@ -71,7 +71,7 @@ function show(i){
   img.onload=function(){spin.classList.add('off');img.classList.add('ready')};
   img.onerror=function(){spin.classList.add('off');cap.textContent='This photo could not be loaded.'};
   img.alt=it.alt; img.src=it.src;
-  cap.textContent=it.alt+' ('+(idx+1)+' of '+list.length+')';
+  cap.textContent='';
   [1,-1].forEach(function(d){var n=list[(idx+d+list.length)%list.length];if(n){var p=new Image();p.src=n.src}});
 }
 function open(src,btn){
