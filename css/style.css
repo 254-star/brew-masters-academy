@@ -264,7 +264,7 @@ body.lb-open{overflow:hidden}
 .detail-content{padding:64px 0}
 .detail-content h2{color:var(--green)}
 .detail-content p{max-width:72ch}
-.detail-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:30px}
+.detail-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:30px;align-items:start}
 .detail-cards .card{padding:28px}
 .detail-cards .card h2{font-size:1.55rem}
 .detail-cards .price{margin:.5em 0!important}
